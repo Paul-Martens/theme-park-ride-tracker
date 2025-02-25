@@ -9,20 +9,46 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      rides: {
+      park: {
         Row: {
-          id: number
           name: string
+          uuid: string
         }
         Insert: {
-          id?: number
           name: string
+          uuid?: string
         }
         Update: {
-          id?: number
           name?: string
+          uuid?: string
         }
         Relationships: []
+      }
+      ride: {
+        Row: {
+          name: string
+          park_uuid: string
+          uuid: string
+        }
+        Insert: {
+          name: string
+          park_uuid: string
+          uuid?: string
+        }
+        Update: {
+          name?: string
+          park_uuid?: string
+          uuid?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ride_park_uuid_fkey"
+            columns: ["park_uuid"]
+            isOneToOne: false
+            referencedRelation: "park"
+            referencedColumns: ["uuid"]
+          },
+        ]
       }
     }
     Views: {

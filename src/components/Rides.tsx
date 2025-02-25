@@ -7,7 +7,7 @@ import { supabase } from '../services/supabase';
 import './Rides.css';
 
 async function fetchRides() {
-  const { data, error } = await supabase.from('rides').select();
+  const { data, error } = await supabase.from('ride').select();
 
   if (error) {
     throw error;
@@ -40,7 +40,7 @@ function RidesData({ ridesPromise }: RidesDataType) {
   return (
     <Fragment>
       {rides?.map((ride) => (
-        <div key={ride.id} className="Ride">
+        <div key={ride.uuid} className="Ride">
           {ride.name}
         </div>
       ))}
