@@ -1,0 +1,9 @@
+.Rides {
+  .Ride {
+    padding: 0.25rem 0;
+
+    &:nth-of-type(odd) {
+      background-color: hsl(0, 0%, 96%);
+    }
+  }
+}
