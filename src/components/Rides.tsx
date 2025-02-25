@@ -1,5 +1,7 @@
 import { Fragment, Suspense, use } from 'react';
 
+import { ErrorWrapper } from './wrappers/ErrorWrapper';
+
 import { supabase } from '../services/supabase';
 
 import './Rides.css';
@@ -19,9 +21,11 @@ function Rides() {
     <section className="Rides">
       <h2>Rides</h2>
 
-      <Suspense>
-        <RidesData ridesPromise={fetchRides()} />
-      </Suspense>
+      <ErrorWrapper>
+        <Suspense>
+          <RidesData ridesPromise={fetchRides()} />
+        </Suspense>
+      </ErrorWrapper>
     </section>
   );
 }
