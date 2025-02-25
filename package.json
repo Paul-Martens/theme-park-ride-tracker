@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "generate-supabase-types": "supabase gen types typescript --project-id ezwidjpihvabgqgkbwro > database.types.ts"
+    "generate-supabase-types": "supabase gen types typescript --project-id ezwidjpihvabgqgkbwro > src/database.types.ts"
   },
   "dependencies": {
     "react": "^19.0.0",
