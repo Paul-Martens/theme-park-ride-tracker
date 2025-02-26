@@ -1,12 +1,14 @@
-import { Rides } from './components/Rides';
+import { BrowserRouter, Route, Routes } from 'react-router';
+
+import { RidesPage } from './pages/RidesPage';
 
 function App() {
   return (
-    <main>
-      <h1>Theme Park Ride Tracker</h1>
-
-      <Rides />
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" Component={RidesPage} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
