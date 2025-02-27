@@ -7,4 +7,13 @@ const supabase = createClient<Database>(
   import.meta.env.VITE__SUPABASE__API_KEY,
 );
 
-export { supabase };
+function signOut() {
+  supabase.auth.signOut();
+}
+
+async function getUserThroughSession() {
+  const { data } = await supabase.auth.getSession();
+  return data.session?.user;
+}
+
+export { supabase, signOut, getUserThroughSession };
