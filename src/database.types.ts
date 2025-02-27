@@ -13,23 +13,23 @@ export type Database = {
         Row: {
           auth_uuid: string
           ride_uuid: string
-          ride_variant_uuid: string | null
           timestamp: string
           uuid: string
+          variant_uuid: string | null
         }
         Insert: {
           auth_uuid?: string
           ride_uuid: string
-          ride_variant_uuid?: string | null
           timestamp?: string
           uuid?: string
+          variant_uuid?: string | null
         }
         Update: {
           auth_uuid?: string
           ride_uuid?: string
-          ride_variant_uuid?: string | null
           timestamp?: string
           uuid?: string
+          variant_uuid?: string | null
         }
         Relationships: [
           {
@@ -40,10 +40,10 @@ export type Database = {
             referencedColumns: ["uuid"]
           },
           {
-            foreignKeyName: "log_ride_variant_uuid_fkey"
-            columns: ["ride_variant_uuid"]
+            foreignKeyName: "log_variant_uuid_fkey"
+            columns: ["variant_uuid"]
             isOneToOne: false
-            referencedRelation: "ride_variant"
+            referencedRelation: "variant"
             referencedColumns: ["uuid"]
           },
         ]
@@ -89,7 +89,7 @@ export type Database = {
           },
         ]
       }
-      ride_variant: {
+      variant: {
         Row: {
           name: string
           ride_uuid: string
@@ -107,7 +107,7 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "ride_variant_ride_uuid_fkey"
+            foreignKeyName: "variant_ride_uuid_fkey"
             columns: ["ride_uuid"]
             isOneToOne: false
             referencedRelation: "ride"

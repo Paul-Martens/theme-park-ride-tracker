@@ -14,10 +14,10 @@ interface RideProps {
 function Ride({ uuid, name, variants }: RideProps) {
   const navigate = useNavigate();
 
-  async function log(ride_uuid: string, ride_variant_uuid?: string) {
+  async function log(ride_uuid: string, variant_uuid?: string) {
     const { error } = await supabase
       .from('log')
-      .insert({ ride_uuid, ride_variant_uuid });
+      .insert({ ride_uuid, variant_uuid });
 
     if (!error) {
       navigate('/');
