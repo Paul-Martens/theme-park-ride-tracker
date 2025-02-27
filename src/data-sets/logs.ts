@@ -1,9 +1,9 @@
 import { supabase } from '../services/supabase';
 
-async function fetchRides() {
+async function fetchLogs() {
   const { data, error } = await supabase
-    .from('ride')
-    .select('uuid, name, variants:ride_variant(uuid, name)');
+    .from('log')
+    .select('uuid, timestamp, ride(name), variant:ride_variant(name)');
 
   if (error) {
     throw error;
@@ -12,4 +12,4 @@ async function fetchRides() {
   return data;
 }
 
-export { fetchRides };
+export { fetchLogs };

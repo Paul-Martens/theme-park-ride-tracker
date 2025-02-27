@@ -1,6 +1,7 @@
 import { Fragment, use } from 'react';
 
 import { fetchRides } from '../data-sets/rides';
+import { Ride } from './Ride';
 
 interface RidesOverviewDataType {
   ridesPromise: ReturnType<typeof fetchRides>;
@@ -11,11 +12,7 @@ function RidesOverviewData({ ridesPromise }: RidesOverviewDataType) {
 
   return (
     <Fragment>
-      {rides?.map((ride) => (
-        <div key={ride.uuid} className="Ride">
-          {ride.name}
-        </div>
-      ))}
+      {rides?.map((ride) => <Ride key={ride.uuid} {...ride} />)}
     </Fragment>
   );
 }

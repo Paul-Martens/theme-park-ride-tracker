@@ -9,6 +9,8 @@ import { SignUpConfirmPage } from './pages/SignUpConfirmPage';
 
 import { RidesPage } from './pages/RidesPage';
 
+import { LogPage } from './pages/LogPage';
+
 function App() {
   return (
     <BrowserRouter>
@@ -20,7 +22,9 @@ function App() {
         <Route path="/sign-up" Component={SignUpPage} />
         <Route path="/sign-up/confirm" Component={SignUpConfirmPage} />
 
-        <Route path="/" Component={RidesPage} />
+        <Route path="/rides" Component={RidesPage} />
+
+        <Route path="/" Component={LogPage} />
       </Routes>
     </BrowserRouter>
   );

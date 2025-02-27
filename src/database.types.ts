@@ -9,6 +9,45 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      log: {
+        Row: {
+          auth_uuid: string
+          ride_uuid: string
+          ride_variant_uuid: string | null
+          timestamp: string
+          uuid: string
+        }
+        Insert: {
+          auth_uuid?: string
+          ride_uuid: string
+          ride_variant_uuid?: string | null
+          timestamp?: string
+          uuid?: string
+        }
+        Update: {
+          auth_uuid?: string
+          ride_uuid?: string
+          ride_variant_uuid?: string | null
+          timestamp?: string
+          uuid?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "log_ride_uuid_fkey"
+            columns: ["ride_uuid"]
+            isOneToOne: false
+            referencedRelation: "ride"
+            referencedColumns: ["uuid"]
+          },
+          {
+            foreignKeyName: "log_ride_variant_uuid_fkey"
+            columns: ["ride_variant_uuid"]
+            isOneToOne: false
+            referencedRelation: "ride_variant"
+            referencedColumns: ["uuid"]
+          },
+        ]
+      }
       park: {
         Row: {
           name: string
@@ -46,6 +85,32 @@ export type Database = {
             columns: ["park_uuid"]
             isOneToOne: false
             referencedRelation: "park"
+            referencedColumns: ["uuid"]
+          },
+        ]
+      }
+      ride_variant: {
+        Row: {
+          name: string
+          ride_uuid: string
+          uuid: string
+        }
+        Insert: {
+          name: string
+          ride_uuid: string
+          uuid?: string
+        }
+        Update: {
+          name?: string
+          ride_uuid?: string
+          uuid?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ride_variant_ride_uuid_fkey"
+            columns: ["ride_uuid"]
+            isOneToOne: false
+            referencedRelation: "ride"
             referencedColumns: ["uuid"]
           },
         ]
