@@ -1,7 +1,5 @@
 import { useNavigate } from 'react-router';
 
-import { supabase } from '../services/supabase';
-
 interface RideProps {
   uuid: string;
   name: string;
@@ -14,14 +12,21 @@ interface RideProps {
 function Ride({ uuid, name, variants }: RideProps) {
   const navigate = useNavigate();
 
-  async function log(ride_uuid: string, variant_uuid?: string) {
-    const { error } = await supabase
-      .from('log')
-      .insert({ ride_uuid, variant_uuid });
-
-    if (!error) {
-      navigate('/');
+  async function log(
+    ride_uuid: string,
+    ride_name: string,
+    variant_uuid?: string,
+    variant_name?: string,
+  ) {
+    if (variant_uuid) {
+      return navigate(
+        `/rides/confirm/?ride_uuid=${ride_uuid}&ride_name=${ride_name}&variant_uuid=${variant_uuid}&variant_name=${variant_name}`,
+      );
     }
+
+    return navigate(
+      `/rides/confirm/?ride_uuid=${ride_uuid}&ride_name=${ride_name}`,
+    );
   }
 
   return (
@@ -33,7 +38,7 @@ function Ride({ uuid, name, variants }: RideProps) {
           <button
             key={variant.uuid}
             onClick={() => {
-              log(uuid, variant.uuid);
+              log(uuid, name, variant.uuid, variant.name);
             }}
           >
             REGISTER VARIANT {variant.name}
@@ -42,7 +47,7 @@ function Ride({ uuid, name, variants }: RideProps) {
       ) : (
         <button
           onClick={() => {
-            log(uuid);
+            log(uuid, name);
           }}
         >
           REGISTER

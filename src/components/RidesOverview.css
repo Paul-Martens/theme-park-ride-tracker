@@ -1,9 +1,18 @@
 .Rides {
   .Ride {
-    padding: 0.25rem 0;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: hsl(0, 0%, 96%);
+    border-radius: 0.25rem;
 
-    &:nth-of-type(odd) {
-      background-color: hsl(0, 0%, 96%);
+    h1 {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+
+    button {
+      display: block;
+      margin-top: 0.5rem;
     }
   }
 }
