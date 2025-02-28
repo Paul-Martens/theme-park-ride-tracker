@@ -1,9 +1,11 @@
+import { Page } from '../components/layout/Page';
+
 function SignUpConfirmPage() {
   return (
-    <main>
+    <Page>
       <h1>Confirm your account</h1>
       <p>Check your email and confirm your account.</p>
-    </main>
+    </Page>
   );
 }
 

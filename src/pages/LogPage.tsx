@@ -1,10 +1,12 @@
 import { Link } from 'react-router';
 
+import { Page } from '../components/layout/Page';
+
 import { LogOverview } from '../components/LogOverview';
 
 function LogPage() {
   return (
-    <main>
+    <Page>
       <h1>Log Page</h1>
 
       <p>
@@ -12,7 +14,7 @@ function LogPage() {
       </p>
 
       <LogOverview />
-    </main>
+    </Page>
   );
 }
 

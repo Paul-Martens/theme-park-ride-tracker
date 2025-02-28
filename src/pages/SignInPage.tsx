@@ -1,12 +1,14 @@
+import { Page } from '../components/layout/Page';
+
 import { SignInForm } from '../components/forms/SignInForm';
 
 function SignInPage() {
   return (
-    <main>
+    <Page>
       <h1>Sign In</h1>
 
       <SignInForm />
-    </main>
+    </Page>
   );
 }
 

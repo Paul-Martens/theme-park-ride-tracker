@@ -1,12 +1,14 @@
+import { Page } from '../components/layout/Page';
+
 import { RidesOverview } from '../components/RidesOverview';
 
 function RidesPage() {
   return (
-    <main>
+    <Page>
       <h1>Rides</h1>
 
       <RidesOverview />
-    </main>
+    </Page>
   );
 }
 

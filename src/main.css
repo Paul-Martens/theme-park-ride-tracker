@@ -12,8 +12,7 @@ button {
   line-height: 1.5rem;
 }
 
-header,
-main {
+header {
   margin: 2rem auto;
   max-width: 40rem;
 }

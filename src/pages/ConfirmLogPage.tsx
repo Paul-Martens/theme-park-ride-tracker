@@ -2,6 +2,8 @@ import { useNavigate, useSearchParams } from 'react-router';
 
 import { supabase } from '../services/supabase';
 
+import { Page } from '../components/layout/Page';
+
 function ConfirmLogPage() {
   const navigate = useNavigate();
 
@@ -27,7 +29,7 @@ function ConfirmLogPage() {
   }
 
   return (
-    <main>
+    <Page>
       <h1>Confirm Log</h1>
 
       <p>
@@ -44,7 +46,7 @@ function ConfirmLogPage() {
           CANCEL
         </button>
       </div>
-    </main>
+    </Page>
   );
 }
 

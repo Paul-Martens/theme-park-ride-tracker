@@ -1,12 +1,14 @@
+import { Page } from '../components/layout/Page';
+
 import { SignUpForm } from '../components/forms/SignUpForm';
 
 function SignUpPage() {
   return (
-    <main>
+    <Page>
       <h1>Sign Up</h1>
 
       <SignUpForm />
-    </main>
+    </Page>
   );
 }
 
