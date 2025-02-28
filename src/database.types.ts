@@ -12,21 +12,27 @@ export type Database = {
       log: {
         Row: {
           auth_uuid: string
+          date: string
           ride_uuid: string
+          time: string
           timestamp: string
           uuid: string
           variant_uuid: string | null
         }
         Insert: {
           auth_uuid?: string
+          date?: string
           ride_uuid: string
+          time?: string
           timestamp?: string
           uuid?: string
           variant_uuid?: string | null
         }
         Update: {
           auth_uuid?: string
+          date?: string
           ride_uuid?: string
+          time?: string
           timestamp?: string
           uuid?: string
           variant_uuid?: string | null

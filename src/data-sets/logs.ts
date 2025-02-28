@@ -9,7 +9,7 @@ async function fetchLogs() {
 
   const { data, error } = await supabase
     .from('log')
-    .select('uuid, timestamp, ride(name), variant(name)')
+    .select('uuid, timestamp, date, time, ride(name), variant(name)')
     .eq('auth_uuid', user?.id);
 
   if (error) {
