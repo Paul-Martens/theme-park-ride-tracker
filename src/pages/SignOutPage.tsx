@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router';
 
-import { signOut } from '../services/supabase';
+import { supabase } from '../services/supabase';
 
 import { Page } from '../components/layout/Page';
 
@@ -8,7 +8,7 @@ function SignOutPage() {
   const navigate = useNavigate();
 
   function signOutAndRedirect() {
-    signOut();
+    supabase.auth.signOut();
     navigate('/');
   }
 

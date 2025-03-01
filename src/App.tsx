@@ -1,7 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router';
 
-import { AppHeader } from './components/AppHeader';
-
 import { SignInPage } from './pages/SignInPage';
 import { SignOutPage } from './pages/SignOutPage';
 import { SignUpPage } from './pages/SignUpPage';
@@ -11,11 +9,12 @@ import { RidesPage } from './pages/RidesPage';
 import { ConfirmLogPage } from './pages/ConfirmLogPage';
 
 import { LogPage } from './pages/LogPage';
+import { WebsiteHeader } from './components/app/WebsiteHeader';
 
 function App() {
   return (
     <BrowserRouter>
-      <AppHeader />
+      <WebsiteHeader />
 
       <Routes>
         <Route path="/sign-in" Component={SignInPage} />

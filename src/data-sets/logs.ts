@@ -1,7 +1,7 @@
-import { getUserThroughSession, supabase } from '../services/supabase';
+import { supabase, useUser } from '../services/supabase';
 
 async function fetchLogs() {
-  const user = await getUserThroughSession();
+  const user = useUser();
 
   if (!user) {
     throw new Error('Not signed in');
