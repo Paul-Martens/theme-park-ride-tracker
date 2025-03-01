@@ -15,6 +15,7 @@ function useUser() {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_, session) => {
+      console.log('CHANGE:', _, session?.user);
       setUser(session?.user);
     });
 

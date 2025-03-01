@@ -1,16 +1,16 @@
-import { supabase, useUser } from '../services/supabase';
+import { supabase } from '../services/supabase';
 
 async function fetchLogs() {
-  const user = useUser();
+  const { data: userData } = await supabase.auth.getUser();
 
-  if (!user) {
+  if (!userData.user) {
     throw new Error('Not signed in');
   }
 
   const { data, error } = await supabase
     .from('log')
     .select('uuid, timestamp, date, time, ride(name), variant(name)')
-    .eq('auth_uuid', user?.id);
+    .eq('auth_uuid', userData.user.id);
 
   if (error) {
     throw error;
