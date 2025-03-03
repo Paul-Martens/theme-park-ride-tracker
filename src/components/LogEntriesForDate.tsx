@@ -36,7 +36,11 @@ function Data({ loader }: DataProps) {
   const entries = use(loader);
 
   if (!entries || !entries.length) {
-    return <p>There are no entries yet.</p>;
+    return (
+      <div className="LogEntriesForDate">
+        <p className="no-rides-yet">No rides yet, go have some fun!</p>
+      </div>
+    );
   }
 
   return (

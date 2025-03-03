@@ -8,4 +8,8 @@
   td {
     padding: 0.25rem 0.5rem;
   }
+
+  .no-rides-yet {
+    color: var(--color-sub);
+  }
 }
