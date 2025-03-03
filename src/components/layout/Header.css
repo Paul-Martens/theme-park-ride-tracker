@@ -1,9 +1,22 @@
 .Header {
-  margin: 0 auto;
-  max-width: 40rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: calc(50vw - 20rem);
+  padding-right: calc(50vw - 20rem);
+  background-color: hsl(28, 32%, 90%);
+
+  & > * {
+    margin: 0;
+  }
 
   @media screen and (max-width: 42rem) {
-    margin-left: 1rem;
-    margin-right: 1rem;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }

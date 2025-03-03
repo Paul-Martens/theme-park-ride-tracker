@@ -13,7 +13,7 @@
   --color-sub: hsl(30, 8%, 62%);
 }
 
-:root,
+body,
 input,
 button {
   color: var(--color-text);
