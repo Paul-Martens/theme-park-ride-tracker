@@ -1,7 +1,8 @@
+import { useEffect, useState } from 'react';
+
 import { createClient, User } from '@supabase/supabase-js';
 
 import { Database } from '../database.types';
-import { useEffect, useState } from 'react';
 
 const supabase = createClient<Database>(
   import.meta.env.VITE__SUPABASE__PROJECT_URL,

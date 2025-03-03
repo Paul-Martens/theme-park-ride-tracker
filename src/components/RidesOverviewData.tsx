@@ -1,6 +1,7 @@
 import { Fragment, use } from 'react';
 
 import { fetchRides } from '../data-sets/rides';
+
 import { Ride } from './Ride';
 
 interface RidesOverviewDataType {

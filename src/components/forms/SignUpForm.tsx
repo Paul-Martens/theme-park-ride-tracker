@@ -2,9 +2,10 @@ import { useActionState } from 'react';
 
 import { useNavigate } from 'react-router';
 
+import { supabase } from '../../services/supabase';
+
 import { TextField } from '../form-fields/TextField';
 import { SubmitButton } from '../form-fields/SubmitButton';
-import { supabase } from '../../services/supabase';
 
 function SignUpForm() {
   const navigate = useNavigate();

@@ -1,10 +1,10 @@
 import { Suspense } from 'react';
 
+import { fetchLogs } from '../data-sets/logs';
+
 import { ErrorWrapper } from './wrappers/ErrorWrapper';
 
 import { LogOverviewData } from './LogOverviewData';
-
-import { fetchLogs } from '../data-sets/logs';
 
 function LogOverview() {
   const logLoader = fetchLogs();
