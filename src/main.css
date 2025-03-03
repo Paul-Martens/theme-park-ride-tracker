@@ -4,22 +4,44 @@
   box-sizing: border-box;
 }
 
-body,
+:root {
+  --font-heading: 'Alegreya', system-ui;
+  --font-text: 'Alegreya Sans', system-ui;
+
+  --color-heading: hsl(352, 75%, 38%);
+  --color-text: hsl(28, 32%, 24%);
+  --color-sub: hsl(30, 8%, 62%);
+}
+
+:root,
 input,
 button {
-  font-family: system-ui;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  color: var(--color-text);
+  font-family: var(--font-text);
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 400;
 }
 
 h1 {
-  margin-bottom: 2rem;
-}
-
-h2 {
-  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-heading);
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
 }
 
 p {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: underline;
+
+  &:hover {
+    color: var(--color-heading);
+  }
 }
