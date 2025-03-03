@@ -10,7 +10,7 @@ import { SignUpConfirmPage } from './pages/SignUpConfirmPage';
 import { RidesPage } from './pages/RidesPage';
 import { ConfirmLogPage } from './pages/ConfirmLogPage';
 
-import { LogPage } from './pages/LogPage';
+import { StartPage } from './pages/StartPage';
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
         <Route path="/rides" Component={RidesPage} />
         <Route path="/rides/confirm" Component={ConfirmLogPage} />
 
-        <Route path="/" Component={LogPage} />
+        <Route path="/" Component={StartPage} />
       </Routes>
     </BrowserRouter>
   );

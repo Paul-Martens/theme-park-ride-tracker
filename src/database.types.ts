@@ -123,10 +123,25 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      unique_dates: {
+        Row: {
+          date: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
-      [_ in never]: never
+      get_log_entries_for_date: {
+        Args: {
+          date_to_match: string
+        }
+        Returns: {
+          uuid: string
+          timestamp: string
+          ride_name: string
+          variant_name: string
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never

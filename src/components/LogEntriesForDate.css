@@ -1,0 +1,11 @@
+.LogEntriesForDate {
+  border-collapse: collapse;
+
+  tr:nth-of-type(odd) {
+    background-color: hsl(28, 32%, 95%);
+  }
+
+  td {
+    padding: 0.25rem 0.5rem;
+  }
+}
