@@ -5,6 +5,11 @@
 }
 
 :root {
+  position: relative;
+  min-height: 100vh;
+}
+
+:root {
   --font-heading: 'Domine', system-ui;
   --font-text: 'Domine', system-ui;
 

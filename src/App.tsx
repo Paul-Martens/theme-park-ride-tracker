@@ -10,10 +10,13 @@ import { RidesPage } from './pages/RidesPage';
 import { ConfirmLogPage } from './pages/ConfirmLogPage';
 
 import { StartPage } from './pages/StartPage';
+import { Grid } from './components/development/Grid';
 
 function App() {
   return (
     <BrowserRouter>
+      <Grid />
+
       <WebsiteHeader />
 
       <Routes>

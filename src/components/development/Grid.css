@@ -1,0 +1,13 @@
+.Grid {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    transparent,
+    transparent calc(0.5rem - 1px),
+    hsla(0, 50%, 50%, 0.5) 0.5rem
+  );
+}
