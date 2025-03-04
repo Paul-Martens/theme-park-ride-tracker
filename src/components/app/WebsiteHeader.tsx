@@ -7,7 +7,11 @@ import './WebsiteHeader.css';
 function WebsiteHeader() {
   return (
     <Header>
-      <h1>Ride Tracker</h1>
+      <h1 className="WebsiteTitle">
+        Theme Park
+        <br />
+        Ride Tracker
+      </h1>
       <CurrentUser />
     </Header>
   );

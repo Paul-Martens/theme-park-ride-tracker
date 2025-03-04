@@ -10,22 +10,52 @@
 }
 
 :root {
-  --font-heading: 'Domine', system-ui;
-  --font-text: 'Domine', system-ui;
+  --font-heading: 'Domine', serif;
+  --font-text: 'Domine', serif;
 
   --color-heading: hsl(352, 75%, 38%);
   --color-text: hsl(28, 32%, 24%);
   --color-sub: hsl(30, 8%, 62%);
+
+  --color-text: hsl(40, 20%, 20%);
+}
+
+body {
+  background-color: hsl(40, 20%, 95%);
 }
 
 body,
-input,
-button {
+input {
   color: var(--color-text);
   font-family: var(--font-text);
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 400;
+}
+
+button {
+  padding: 0.25rem 0.5rem;
+  color: white;
+  background-color: hsl(352, 75%, 38%);
+  border: none;
+  border-radius: 0.2rem;
+  box-shadow:
+    inset 0 -1px hsl(352, 75%, 15%),
+    inset 0 -2px hsl(352, 75%, 15%);
+  font-family: var(--font-text);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  height: 2rem;
+
+  &:active,
+  &:hover {
+    padding-top: calc(0.25rem + 2px);
+    padding-bottom: calc(0.25rem - 2px);
+    box-shadow:
+      inset 0 1px hsl(40, 20%, 75%),
+      inset 0 2px hsl(40, 20%, 75%);
+  }
 }
 
 h1 {

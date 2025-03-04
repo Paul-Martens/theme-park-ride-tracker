@@ -2,20 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: calc(50vw - 20rem);
-  padding-right: calc(50vw - 20rem);
-  background-color: hsl(28, 32%, 90%);
+  padding: 1rem calc(50vw - 20rem);
+  background-color: white;
 
-  & > * {
-    margin: 0;
-  }
-
-  @media screen and (max-width: 42rem) {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.5rem;
+  @media screen and (max-width: 40rem) {
     padding-left: 1rem;
     padding-right: 1rem;
   }

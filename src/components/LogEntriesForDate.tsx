@@ -44,19 +44,21 @@ function Data({ loader }: DataProps) {
   }
 
   return (
-    <table className="LogEntriesForDate">
-      <tbody>
-        {entries.map((entry) => (
-          <tr key={entry.uuid}>
-            <td>{getTimeFromTimestamp(entry.timestamp)}</td>
-            <td>
-              {entry.ride_name}{' '}
-              {entry.variant_name && `(${entry.variant_name})`}
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <div className="LogEntriesForDate">
+      <table>
+        <tbody>
+          {entries.map((entry) => (
+            <tr key={entry.uuid}>
+              <td>{getTimeFromTimestamp(entry.timestamp)}</td>
+              <td>
+                {entry.ride_name}{' '}
+                {entry.variant_name && `(${entry.variant_name})`}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 
