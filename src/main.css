@@ -5,8 +5,8 @@
 }
 
 :root {
-  --font-heading: 'Alegreya', system-ui;
-  --font-text: 'Alegreya Sans', system-ui;
+  --font-heading: 'Domine', system-ui;
+  --font-text: 'Domine', system-ui;
 
   --color-heading: hsl(352, 75%, 38%);
   --color-text: hsl(28, 32%, 24%);
@@ -18,8 +18,8 @@ input,
 button {
   color: var(--color-text);
   font-family: var(--font-text);
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
   font-weight: 400;
 }
 
