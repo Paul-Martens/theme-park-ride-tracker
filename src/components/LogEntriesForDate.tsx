@@ -4,6 +4,8 @@ import { getTimeFromTimestamp } from '../helpers/date-and-time';
 
 import { supabase } from '../services/supabase';
 
+import { Text } from './layout/Text';
+
 import './LogEntriesForDate.css';
 
 async function fetchLogEntriesForDate(date: string) {
@@ -38,7 +40,9 @@ function Data({ loader }: DataProps) {
   if (!entries || !entries.length) {
     return (
       <div className="LogEntriesForDate">
-        <p className="no-rides-yet">No rides yet, go have some fun!</p>
+        <Text>
+          <p className="no-rides-yet">No rides yet, go have some fun!</p>
+        </Text>
       </div>
     );
   }

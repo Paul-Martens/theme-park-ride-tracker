@@ -1,5 +1,3 @@
-import './SubmitButton.css';
-
 interface SubmitButtonProps {
   label: string;
   disabled?: boolean;

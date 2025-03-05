@@ -1,10 +1,9 @@
 .Page {
-  margin: 0 auto;
-  max-width: 30rem;
+  margin: 1.5rem 1rem;
 
-  @media screen and (max-width: 640px) {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    max-width: none;
+  @media screen and (min-width: 640px) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 30rem;
   }
 }
