@@ -2,10 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem calc(50vw - 20rem);
+  padding: 1rem calc(50vw - 320px + 1rem);
   background-color: white;
 
-  @media screen and (max-width: 40rem) {
+  @media screen and (max-width: 640px) {
     padding-left: 1rem;
     padding-right: 1rem;
   }
