@@ -1,6 +1,6 @@
 .Page {
   margin: 0 auto;
-  max-width: 40rem;
+  max-width: 30rem;
 
   @media screen and (max-width: 40rem) {
     margin-left: 1rem;
