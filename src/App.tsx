@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router';
 
+import { Grid } from './components/development/Grid';
+
 import { WebsiteHeader } from './components/app/WebsiteHeader';
 
 import { SignOutPage } from './pages/SignOutPage';
@@ -10,7 +12,6 @@ import { RidesPage } from './pages/RidesPage';
 import { ConfirmLogPage } from './pages/ConfirmLogPage';
 
 import { StartPage } from './pages/StartPage';
-import { Grid } from './components/development/Grid';
 
 function App() {
   return (
