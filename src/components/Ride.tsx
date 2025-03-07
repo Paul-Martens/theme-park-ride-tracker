@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router';
 
 import { supabase } from '../services/supabase';
 
-import { Dialog } from './layout/Dialog';
-import { Text } from './layout/Text';
+import { Dialog } from './ui-kit/layout/Dialog';
+import { Text } from './ui-kit/layout/Text';
 
 interface RideProps {
   uuid: string;

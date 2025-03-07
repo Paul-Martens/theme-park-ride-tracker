@@ -1,6 +1,6 @@
 import { MouseEventHandler, ReactNode } from 'react';
 
-import { stopPropagation } from '../../helpers/events';
+import { stopPropagation } from '../../../helpers/events';
 
 import { Glass } from './Glass';
 

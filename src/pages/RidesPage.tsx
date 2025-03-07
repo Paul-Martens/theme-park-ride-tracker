@@ -1,5 +1,5 @@
-import { Page } from '../components/layout/Page';
-import { Text } from '../components/layout/Text';
+import { Page } from '../components/ui-kit/layout/Page';
+import { Text } from '../components/ui-kit/layout/Text';
 
 import { RidesOverview } from '../components/RidesOverview';
 

@@ -4,7 +4,7 @@ import { getTimeFromTimestamp } from '../helpers/date-and-time';
 
 import { supabase } from '../services/supabase';
 
-import { Text } from './layout/Text';
+import { Text } from './ui-kit/layout/Text';
 
 import './LogEntriesForDate.css';
 

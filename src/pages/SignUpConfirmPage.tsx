@@ -1,4 +1,4 @@
-import { Page } from '../components/layout/Page';
+import { Page } from '../components/ui-kit/layout/Page';
 
 function SignUpConfirmPage() {
   return (
