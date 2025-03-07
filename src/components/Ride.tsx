@@ -1,4 +1,10 @@
+import { Fragment, useState } from 'react';
 import { useNavigate } from 'react-router';
+
+import { supabase } from '../services/supabase';
+
+import { Dialog } from './layout/Dialog';
+import { Text } from './layout/Text';
 
 interface RideProps {
   uuid: string;
@@ -11,6 +17,8 @@ interface RideProps {
 
 function Ride({ uuid, name, variants }: RideProps) {
   const navigate = useNavigate();
+
+  const [showDialog, setShowDialog] = useState(false);
 
   async function log(
     ride_uuid: string,
@@ -29,31 +37,57 @@ function Ride({ uuid, name, variants }: RideProps) {
     );
   }
 
-  return (
-    <article className="Ride">
-      <h1>{name}</h1>
+  const { data } = supabase.storage.from('rides').getPublicUrl(`${uuid}.jpg`);
 
-      {variants.length ? (
-        variants.map((variant) => (
-          <button
-            key={variant.uuid}
-            onClick={() => {
-              log(uuid, name, variant.uuid, variant.name);
-            }}
-          >
-            REGISTER VARIANT {variant.name}
-          </button>
-        ))
-      ) : (
-        <button
+  return (
+    <Fragment>
+      {showDialog && (
+        <Dialog
           onClick={() => {
-            log(uuid, name);
+            setShowDialog(false);
           }}
         >
-          REGISTER
-        </button>
+          <Text>
+            <h1>{name}</h1>
+
+            {variants.length ? (
+              variants.map((variant) => (
+                <p>
+                  <button
+                    key={variant.uuid}
+                    onClick={() => {
+                      log(uuid, name, variant.uuid, variant.name);
+                    }}
+                  >
+                    Log ride variant {variant.name}!
+                  </button>
+                </p>
+              ))
+            ) : (
+              <p>
+                <button
+                  onClick={() => {
+                    log(uuid, name);
+                  }}
+                >
+                  Log this ride!
+                </button>
+              </p>
+            )}
+          </Text>
+        </Dialog>
       )}
-    </article>
+
+      <article
+        className="Ride"
+        onClick={() => {
+          setShowDialog(true);
+        }}
+        style={{ backgroundImage: `url('${data.publicUrl}')` }}
+      >
+        <h2>{name}</h2>
+      </article>
+    </Fragment>
   );
 }
 

@@ -1,0 +1,12 @@
+.Glass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: hsla(170, 10%, 60%, 0.2);
+  backdrop-filter: blur(4px);
+}

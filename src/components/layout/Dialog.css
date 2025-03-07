@@ -1,14 +1,12 @@
-.LogEntriesForDate {
+.Dialog {
+  width: 100%;
+  margin-left: 2rem;
+  margin-right: 2rem;
   padding: 1rem 1rem;
   background-color: white;
   border-radius: 0.25rem;
 
   & > *:last-child {
     margin-bottom: 0;
-  }
-
-  .no-rides-yet {
-    color: var(--color-gray);
-    text-align: center;
   }
 }
