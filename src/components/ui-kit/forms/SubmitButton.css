@@ -1,0 +1,7 @@
+.SubmitButton {
+  &:disabled {
+    cursor: not-allowed;
+    color: var(--color-gray--ultra-light);
+    background-color: var(--color-gray--light);
+  }
+}

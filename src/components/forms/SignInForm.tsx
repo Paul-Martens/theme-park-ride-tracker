@@ -4,8 +4,9 @@ import { useNavigate } from 'react-router';
 
 import { supabase } from '../../services/supabase';
 
+import { SubmitButton } from '../ui-kit/forms/SubmitButton';
+
 import { TextField } from '../form-fields/TextField';
-import { SubmitButton } from '../form-fields/SubmitButton';
 
 function SignInForm() {
   const navigate = useNavigate();
@@ -53,7 +54,7 @@ function SignInForm() {
         minLength={6}
       />
 
-      <SubmitButton label="Register" disabled={isPending} />
+      <SubmitButton label="Register" isDisabled={isPending} />
     </form>
   );
 }
