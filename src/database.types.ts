@@ -71,16 +71,19 @@ export type Database = {
       }
       ride: {
         Row: {
+          has_image: boolean
           name: string
           park_uuid: string
           uuid: string
         }
         Insert: {
+          has_image?: boolean
           name: string
           park_uuid: string
           uuid?: string
         }
         Update: {
+          has_image?: boolean
           name?: string
           park_uuid?: string
           uuid?: string
@@ -123,12 +126,7 @@ export type Database = {
       }
     }
     Views: {
-      unique_dates: {
-        Row: {
-          date: string | null
-        }
-        Relationships: []
-      }
+      [_ in never]: never
     }
     Functions: {
       get_log_entries_for_date: {
@@ -140,6 +138,12 @@ export type Database = {
           timestamp: string
           ride_name: string
           variant_name: string
+        }[]
+      }
+      get_unique_dates: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          date: string
         }[]
       }
     }

@@ -13,7 +13,13 @@ function RidesOverviewData({ ridesPromise }: RidesOverviewDataType) {
 
   return (
     <Fragment>
-      {rides?.map((ride) => <Ride key={ride.uuid} {...ride} />)}
+      {rides
+        ?.filter((ride) => ride.has_image)
+        .map((ride) => <Ride key={ride.uuid} {...ride} hasImage />)}
+
+      {rides
+        ?.filter((ride) => !ride.has_image)
+        .map((ride) => <Ride key={ride.uuid} {...ride} />)}
     </Fragment>
   );
 }

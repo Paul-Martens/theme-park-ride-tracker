@@ -13,9 +13,10 @@ interface RideProps {
     uuid: string;
     name: string;
   }[];
+  hasImage?: boolean;
 }
 
-function Ride({ uuid, name, variants }: RideProps) {
+function Ride({ uuid, name, variants, hasImage = false }: RideProps) {
   const navigate = useNavigate();
 
   const [showDialog, setShowDialog] = useState(false);
@@ -83,7 +84,7 @@ function Ride({ uuid, name, variants }: RideProps) {
         onClick={() => {
           setShowDialog(true);
         }}
-        style={{ backgroundImage: `url('${data.publicUrl}')` }}
+        style={hasImage ? { backgroundImage: `url('${data.publicUrl}')` } : {}}
       >
         <h2>{name}</h2>
       </article>
