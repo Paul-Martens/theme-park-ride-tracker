@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router';
 
 import { supabase } from '../../services/supabase';
 
+import { EmailField } from '../ui-kit/forms/EmailField';
+import { PasswordField } from '../ui-kit/forms/PasswordField';
 import { SubmitButton } from '../ui-kit/forms/SubmitButton';
-
-import { TextField } from '../form-fields/TextField';
 
 function SignUpForm() {
   const navigate = useNavigate();
@@ -34,23 +34,8 @@ function SignUpForm() {
 
   return (
     <form action={action}>
-      <TextField
-        label="Email address"
-        name="email"
-        value={state.email}
-        type="email"
-        required
-      />
-
-      <TextField
-        label="Password"
-        name="password"
-        value={state.password}
-        type="password"
-        required
-        minLength={6}
-      />
-
+      <EmailField label="Email address" name="email" value={state.email} />
+      <PasswordField label="Password" name="password" value={state.password} />
       <SubmitButton label="Register" isDisabled={isPending} />
     </form>
   );
