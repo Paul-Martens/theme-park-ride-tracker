@@ -9,7 +9,7 @@ import { Text } from './ui-kit/layout/Text';
 import './LogEntriesForDate.css';
 
 async function fetchLogEntriesForDate(date: string) {
-  const { data } = await supabase.rpc('get_log_entries_for_date', {
+  const { data } = await supabase.rpc('fetch_log_entries_for_date', {
     date_to_match: date,
   });
 

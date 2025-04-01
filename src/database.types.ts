@@ -129,7 +129,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      get_log_entries_for_date: {
+      fetch_log_entries_for_date: {
         Args: {
           date_to_match: string
         }
@@ -140,7 +140,7 @@ export type Database = {
           variant_name: string
         }[]
       }
-      get_unique_dates: {
+      fetch_unique_dates: {
         Args: Record<PropertyKey, never>
         Returns: {
           date: string
