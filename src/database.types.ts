@@ -142,9 +142,7 @@ export type Database = {
       }
       fetch_unique_dates: {
         Args: Record<PropertyKey, never>
-        Returns: {
-          date: string
-        }[]
+        Returns: string[]
       }
     }
     Enums: {
