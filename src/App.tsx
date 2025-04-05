@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router';
 
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
 import { Grid } from './components/development/Grid';
 
 import { WebsiteHeader } from './components/app/WebsiteHeader';
@@ -13,24 +15,34 @@ import { ConfirmLogPage } from './pages/ConfirmLogPage';
 
 import { StartPage } from './pages/StartPage';
 
+import { useParkVisitsRoutes } from './features/park-visits/routes/ParkVisitsRoutes';
+
+const queryClient = new QueryClient();
+
 function App() {
+  const parkVisitRoutes = useParkVisitsRoutes();
+
   return (
-    <BrowserRouter>
-      <Grid />
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Grid />
 
-      <WebsiteHeader />
+        <WebsiteHeader />
 
-      <Routes>
-        <Route path="/sign-out" Component={SignOutPage} />
-        <Route path="/sign-up" Component={SignUpPage} />
-        <Route path="/sign-up/confirm" Component={SignUpConfirmPage} />
+        <Routes>
+          <Route path="/sign-out" Component={SignOutPage} />
+          <Route path="/sign-up" Component={SignUpPage} />
+          <Route path="/sign-up/confirm" Component={SignUpConfirmPage} />
 
-        <Route path="/rides" Component={RidesPage} />
-        <Route path="/rides/confirm" Component={ConfirmLogPage} />
+          <Route path="/rides" Component={RidesPage} />
+          <Route path="/rides/confirm" Component={ConfirmLogPage} />
 
-        <Route path="/" Component={StartPage} />
-      </Routes>
-    </BrowserRouter>
+          <Route path="/" Component={StartPage} />
+
+          {parkVisitRoutes}
+        </Routes>
+      </BrowserRouter>
+    </QueryClientProvider>
   );
 }
 

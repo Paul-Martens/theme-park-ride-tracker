@@ -38,6 +38,12 @@ function StartPage() {
       </Text>
 
       <LogEntriesForDate date={date} />
+
+      <Text>
+        <p>
+          <Link to="/park-visits">Park Visits</Link>
+        </p>
+      </Text>
     </Page>
   );
 }
