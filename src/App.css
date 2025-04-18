@@ -7,12 +7,3 @@
 body {
   font-family: system-ui, sans-serif;
 }
-
-/** TODO: Everything below should be converted into components */
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
-}

@@ -1,3 +1,6 @@
+import { Page } from '~/components/layout/Page';
+import { Heading } from './components/content/Heading';
+
 import { useUser } from '~/services/supabase';
 
 import './App.css';
@@ -8,9 +11,9 @@ function App() {
   if (isInitialized == null) return null;
 
   return (
-    <main>
-      <h1>Theme Park Ride Tracker</h1>
-    </main>
+    <Page>
+      <Heading>Theme Park Ride Tracker</Heading>
+    </Page>
   );
 }
 
