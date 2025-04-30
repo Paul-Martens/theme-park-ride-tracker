@@ -1,10 +1,16 @@
+import { Route, Routes } from 'react-router';
+
+import { routes } from '~/routes';
+
 import './App.css';
 
 function App() {
   return (
-    <main>
-      <h1>Theme Park Ride Tracker</h1>
-    </main>
+    <Routes>
+      {routes.map((route) => (
+        <Route {...route} />
+      ))}
+    </Routes>
   );
 }
 
