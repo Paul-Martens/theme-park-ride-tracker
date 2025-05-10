@@ -19,4 +19,4 @@ function useUser() {
   return { isPending };
 }
 
-export { useUser };
+export { supabase, useUser };
