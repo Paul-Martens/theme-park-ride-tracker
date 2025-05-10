@@ -1,6 +1,6 @@
 import { useActionState } from 'react';
 
-import { AuthError, User } from '@supabase/supabase-js';
+import type { AuthError, User } from '@supabase/supabase-js';
 
 import { supabase } from '~/services/supabase';
 

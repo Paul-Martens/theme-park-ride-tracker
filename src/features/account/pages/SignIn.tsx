@@ -1,7 +1,7 @@
 import { useActionState } from 'react';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 
-import { AuthError, Session } from '@supabase/supabase-js';
+import type { AuthError, Session } from '@supabase/supabase-js';
 
 import { supabase } from '~/services/supabase';
 
@@ -93,6 +93,11 @@ function SignIn() {
         ) : (
           <p>Something went wrong.</p>
         ))}
+
+      <p>
+        Don't have an account yet? Then please{' '}
+        <Link to="/account/sign-up">sign up</Link> first.
+      </p>
     </main>
   );
 }
