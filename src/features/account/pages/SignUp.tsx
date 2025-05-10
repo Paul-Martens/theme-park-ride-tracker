@@ -60,6 +60,7 @@ function SignUp() {
         <form action={action}>
           <div>
             <label htmlFor="email">Email Address</label>
+            <br />
             <input
               id="email"
               name="email"
@@ -71,6 +72,7 @@ function SignUp() {
 
           <div>
             <label htmlFor="password">Password</label>
+            <br />
             <input
               id="password"
               name="password"
