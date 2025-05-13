@@ -10,14 +10,25 @@ const supabase = createClient(
 );
 
 function useSession() {
-  const [isPending, setIsPending] = useState(true);
   const [session, setSession] = useState<Session | null>();
+  const [isPending, setIsPending] = useState(true);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
-      setIsPending(false);
       setSession(session);
+      setIsPending(false);
     });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_, session) => {
+      setSession(session);
+      setIsPending(false);
+    });
+
+    return () => {
+      subscription.unsubscribe();
+    };
   }, []);
 
   return { session, isPending };
