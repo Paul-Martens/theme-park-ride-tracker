@@ -1,4 +1,8 @@
+import { useEffect, useState } from 'react';
+
 import type { ComponentType } from 'react';
+
+import { useSession } from '~/services/supabase';
 
 import { Today } from '~/features/today/pages/Today';
 
@@ -10,7 +14,7 @@ interface Route {
   Component: ComponentType;
 }
 
-const routes: Route[] = [
+const configuration = [
   {
     path: '/',
     Component: Today,
@@ -26,4 +30,24 @@ const routes: Route[] = [
   },
 ];
 
-export { routes };
+function useRoutes() {
+  const [routes, setRoutes] = useState<Route[]>(configuration);
+
+  const { session } = useSession();
+
+  useEffect(() => {
+    setRoutes(
+      configuration.map((route) =>
+        !session &&
+        route.path !== '/account/sign-in' &&
+        route.path !== '/account/sign-up'
+          ? { ...route, Component: SignIn }
+          : route,
+      ),
+    );
+  }, [session]);
+
+  return { routes };
+}
+
+export { useRoutes };
