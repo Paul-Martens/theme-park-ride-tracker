@@ -1,8 +1,8 @@
-import { motion } from 'motion/react';
+import { Route, Routes } from 'react-router';
 
 import { useSession } from '~/services/supabase';
 
-import { Page } from '~/ui/layout/Page';
+import { Home } from '~/features/home/pages/Home';
 
 import './App.css';
 
@@ -14,24 +14,9 @@ function App() {
   }
 
   return (
-    <Page>
-      <motion.h1
-        initial={{
-          opacity: 0,
-          y: 20,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          delay: 0.25,
-          duration: 0.25,
-        }}
-      >
-        Theme Park Ride Tracker
-      </motion.h1>
-    </Page>
+    <Routes>
+      <Route path="/" Component={Home} />
+    </Routes>
   );
 }
 
