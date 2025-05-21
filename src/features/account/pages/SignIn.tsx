@@ -14,7 +14,7 @@ function SignIn() {
 
   const { state, action } = useSignInForm();
 
-  if (state.results.session) {
+  if (state.response.session) {
     navigate('/');
   }
 
@@ -23,8 +23,8 @@ function SignIn() {
       <h1>Sign In</h1>
 
       <Form action={action}>
-        {state.results.error && (
-          <ErrorMessage>{state.results.error.message}</ErrorMessage>
+        {state.response.error && (
+          <ErrorMessage>{state.response.error.message}</ErrorMessage>
         )}
 
         <TextField

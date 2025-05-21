@@ -6,7 +6,7 @@ import type { Session } from '@supabase/supabase-js';
 
 const supabase = createClient(
   import.meta.env.VITE__SUPABASE__URL,
-  import.meta.env.VITE__SUPABASE__KEY,
+  import.meta.env.VITE__SUPABASE__ANON_KEY,
 );
 
 function useSession() {

@@ -1,6 +1,6 @@
 import type { AuthError, Session } from '@supabase/supabase-js';
 
-interface SignInForm {
+interface SignUpForm {
   fields: {
     email: string;
     password: string;
@@ -11,4 +11,4 @@ interface SignInForm {
   };
 }
 
-export type { SignInForm };
+export type { SignUpForm };
