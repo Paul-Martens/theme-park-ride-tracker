@@ -1,0 +1,11 @@
+.TextField {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    padding: 0.25rem 0.5rem;
+    background-color: hsl(40, 10%, 90%);
+    border: none;
+    border-radius: 0.25rem;
+  }
+}

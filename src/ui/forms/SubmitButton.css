@@ -1,0 +1,8 @@
+.SubmitButton {
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  color: hsl(160, 20%, 95%);
+  background-color: hsl(160, 50%, 45%);
+  border: none;
+  border-radius: 0.25rem;
+}

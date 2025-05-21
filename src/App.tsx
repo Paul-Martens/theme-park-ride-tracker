@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router';
 import { useSession } from '~/services/supabase';
 
 import { Home } from '~/features/home/pages/Home';
+import { SignIn } from '~/features/account/pages/SignIn';
 
 import './App.css';
 
@@ -16,6 +17,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" Component={Home} />
+
+      <Route path="/account/sign-in" Component={SignIn} />
     </Routes>
   );
 }
