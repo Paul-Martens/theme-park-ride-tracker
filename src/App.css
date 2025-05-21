@@ -13,10 +13,13 @@
 }
 
 h1 {
+  margin-bottom: 1.5rem;
   font-size: 1.8rem;
+  line-height: 2.5rem;
   font-weight: 500;
 
   @media (min-width: 800px) {
     font-size: 3rem;
+    line-height: 4.5rem;
   }
 }
