@@ -8,15 +8,18 @@ import { SubmitButton } from '~/ui/forms/SubmitButton';
 import { ErrorMessage } from '~/ui/forms/ErrorMessage';
 
 import { useSignInForm } from '../hooks/sign-in-form';
+import { useEffect } from 'react';
 
 function SignIn() {
   const navigate = useNavigate();
 
   const { state, action } = useSignInForm();
 
-  if (state.response.session) {
-    navigate('/');
-  }
+  useEffect(() => {
+    if (state.response.session) {
+      navigate('/');
+    }
+  }, [state.response.session]);
 
   return (
     <Page>
