@@ -1,7 +1,6 @@
 CREATE TABLE IF NOT EXISTS parks (
-  uuid UUID NOT NULL DEFAULT gen_random_uuid (),
+  uuid UUID PRIMARY KEY DEFAULT gen_random_uuid (),
   name TEXT NOT NULL,
-  CONSTRAINT parks_primary_key PRIMARY KEY (uuid),
   CONSTRAINT unique_park_name UNIQUE (name)
 );
 
