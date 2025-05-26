@@ -1,6 +1,31 @@
 .Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100dvw;
-  padding: 0.5rem 1rem;
-  background-color: white;
+  padding: 1rem 1rem;
+  background-color: hsl(0, 0%, 95%);
   text-align: right;
+
+  .app-name {
+    display: block;
+    color: hsl(350, 75%, 45%);
+    font-family: 'Domine', serif;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: -0.15rem;
+    transform: rotateZ(-2.5deg);
+
+    text-shadow:
+      0 1px 0 hsl(175, 12%, 82%),
+      0 2px 0 hsl(175, 12%, 82%);
+
+    @media (min-width: 800px) {
+      font-size: 2.5rem;
+      line-height: 2.5rem;
+    }
+  }
 }

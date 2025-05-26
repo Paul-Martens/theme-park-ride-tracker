@@ -5,7 +5,8 @@
 }
 
 :root {
-  background-color: hsl(40, 10%, 95%);
+  color: hsl(170, 10%, 25%);
+  background-color: hsl(180, 7%, 92%);
 }
 
 :root,
@@ -14,17 +15,31 @@ button {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   line-height: 1.5rem;
-  color: hsl(40, 10%, 15%);
 }
 
 h1 {
   margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-  line-height: 2.5rem;
-  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  font-weight: 600;
 
   @media (min-width: 800px) {
-    font-size: 3rem;
-    line-height: 4.5rem;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+}
+
+h1 {
+  font-family: 'Domine', serif;
+  color: hsl(350, 75%, 45%);
+}
+
+a {
+  color: hsl(170, 10%, 25%);
+
+  &:focus,
+  &:hover {
+    color: hsl(350, 75%, 45%);
+    text-decoration: none;
   }
 }
