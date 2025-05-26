@@ -6,6 +6,7 @@ interface SignUpForm {
     password: string;
   };
   response: {
+    success: boolean | null;
     session: Session | null;
     error: AuthError | null;
   };

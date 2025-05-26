@@ -10,6 +10,7 @@ const initialState: SignUpForm = {
     password: '',
   },
   response: {
+    success: null,
     session: null,
     error: null,
   },
@@ -31,9 +32,11 @@ function useSignUpForm() {
       error,
     } = await supabase.auth.signUp({ email, password });
 
+    const success = Boolean(!error);
+
     return {
       fields: { email, password },
-      response: { session, error },
+      response: { success, session, error },
     };
   }
 

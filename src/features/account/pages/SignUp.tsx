@@ -14,7 +14,7 @@ function SignUp() {
     <Page>
       <h1>Sign Up</h1>
 
-      {state.response.session ? (
+      {state.response.success ? (
         <div>
           <p>
             Thank you for signing up. Please check your email to activate your
