@@ -99,7 +99,7 @@ test.describe('Account', () => {
     });
 
     /**
-     * After signing in, the user should be redirect to Home.
+     * After signing in, the user should be redirected to Home.
      */
     test('Redirect to home after signing in', async ({ page, credentials }) => {
       await createTemporaryUser(credentials);
@@ -132,6 +132,40 @@ test.describe('Account', () => {
       await page.getByRole('button', { name: 'Sign In' }).click();
 
       await expect(page.getByText(message)).toBeVisible();
+    });
+  });
+
+  /**
+   * The Sign Out form is used to log out of user accounts.
+   */
+  test.describe('Sign Out', () => {
+    test.beforeEach(async ({ page }) => {
+      await page.goto('/account/sign-out');
+    });
+
+    /**
+     * The Sign Out form should render its fields without issues.
+     */
+    test('Sign Out form renders without issues', async ({ page }) => {
+      await expect(
+        page.getByRole('button', { name: 'Sign Out' }),
+      ).toBeVisible();
+    });
+
+    /**
+     * After signing out, the user should be redirected to Home.
+     */
+    test('Redirect to home after signing out', async ({
+      page,
+      credentials,
+    }) => {
+      await page.getByRole('button', { name: 'Sign Out' }).click();
+
+      await expect(page).toHaveURL('/');
+
+      await expect(
+        page.getByRole('heading', { name: 'Theme Park Ride Tracker' }),
+      ).toBeVisible();
     });
   });
 });
