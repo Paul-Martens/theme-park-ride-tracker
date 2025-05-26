@@ -8,7 +8,8 @@ function CurrentUser() {
   if (!user) {
     return (
       <p>
-        <Link to="/account/sign-in">Sign In</Link>
+        <Link to="/account/sign-in">Sign In</Link> or{' '}
+        <Link to="/account/sign-up">Sign Up</Link>
       </p>
     );
   }
