@@ -2,7 +2,7 @@ import { Page } from '~/ui/layout/Page';
 
 import { Form } from '~/ui/forms/Form';
 import { TextField } from '~/ui/forms/TextField';
-import { SubmitButton } from '~/ui/forms/SubmitButton';
+import { Button } from '~/ui/forms/Button';
 import { ErrorMessage } from '~/ui/forms/ErrorMessage';
 
 import { useSignUpForm } from '../hooks/sign-up-form';
@@ -41,7 +41,7 @@ function SignUp() {
             defaultValue={state.fields.password}
           />
 
-          <SubmitButton>Sign Up</SubmitButton>
+          <Button type="submit">Sign Up</Button>
         </Form>
       )}
     </Page>

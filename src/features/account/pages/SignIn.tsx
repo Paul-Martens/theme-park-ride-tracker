@@ -1,14 +1,14 @@
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router';
 
 import { Page } from '~/ui/layout/Page';
 
 import { Form } from '~/ui/forms/Form';
 import { TextField } from '~/ui/forms/TextField';
-import { SubmitButton } from '~/ui/forms/SubmitButton';
+import { Button } from '~/ui/forms/Button';
 import { ErrorMessage } from '~/ui/forms/ErrorMessage';
 
 import { useSignInForm } from '../hooks/sign-in-form';
-import { useEffect } from 'react';
 
 function SignIn() {
   const navigate = useNavigate();
@@ -44,7 +44,7 @@ function SignIn() {
           defaultValue={state.fields.password}
         />
 
-        <SubmitButton>Sign In</SubmitButton>
+        <Button type="submit">Sign In</Button>
       </Form>
     </Page>
   );

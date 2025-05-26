@@ -2,27 +2,27 @@ import { useEffect, useState } from 'react';
 
 import { createClient } from '@supabase/supabase-js';
 
-import type { Session } from '@supabase/supabase-js';
+import type { User } from '@supabase/supabase-js';
 
 const supabase = createClient(
   import.meta.env.VITE__SUPABASE__URL,
   import.meta.env.VITE__SUPABASE__ANON_KEY,
 );
 
-function useSession() {
-  const [session, setSession] = useState<Session | null>();
+function useUser() {
+  const [user, setUser] = useState<User | null>();
   const [isPending, setIsPending] = useState(true);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
+      setUser(session ? session.user : null);
       setIsPending(false);
     });
 
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_, session) => {
-      setSession(session);
+      setUser(session ? session.user : null);
       setIsPending(false);
     });
 
@@ -31,7 +31,7 @@ function useSession() {
     };
   }, []);
 
-  return { session, isPending };
+  return { user, isPending };
 }
 
-export { supabase, useSession };
+export { supabase, useUser };

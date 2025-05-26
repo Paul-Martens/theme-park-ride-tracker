@@ -1,27 +1,40 @@
+import { Fragment } from 'react/jsx-runtime';
 import { Route, Routes } from 'react-router';
 
-import { useSession } from '~/services/supabase';
+import { useUser } from '~/services/supabase';
+
+import { Header } from '~/ui/layout/Header';
+
+import { CurrentUser } from '~/features/account/components/CurrentUser';
 
 import { Home } from '~/features/home/pages/Home';
 import { SignUp } from '~/features/account/pages/SignUp';
 import { SignIn } from '~/features/account/pages/SignIn';
+import { SignOut } from '~/features/account/pages/SignOut';
 
 import './App.css';
 
 function App() {
-  const { isPending } = useSession();
+  const { isPending } = useUser();
 
   if (isPending) {
     return null;
   }
 
   return (
-    <Routes>
-      <Route path="/" Component={Home} />
+    <Fragment>
+      <Header>
+        <CurrentUser />
+      </Header>
 
-      <Route path="/account/sign-up" Component={SignUp} />
-      <Route path="/account/sign-in" Component={SignIn} />
-    </Routes>
+      <Routes>
+        <Route path="/" Component={Home} />
+
+        <Route path="/account/sign-up" Component={SignUp} />
+        <Route path="/account/sign-in" Component={SignIn} />
+        <Route path="/account/sign-out" Component={SignOut} />
+      </Routes>
+    </Fragment>
   );
 }
 
