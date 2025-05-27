@@ -47,3 +47,33 @@ VALUES
     ),
     'Joris en de Draak'
   );
+
+INSERT INTO
+  variants (ride_uuid, name)
+VALUES
+  (
+    (
+      SELECT
+        uuid
+      FROM
+        rides
+      WHERE
+        name = 'Joris en de Draak'
+    ),
+    'Rood'
+  );
+
+INSERT INTO
+  variants (ride_uuid, name)
+VALUES
+  (
+    (
+      SELECT
+        uuid
+      FROM
+        rides
+      WHERE
+        name = 'Joris en de Draak'
+    ),
+    'Blauw'
+  );
