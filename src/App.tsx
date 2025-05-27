@@ -7,10 +7,11 @@ import { Header } from '~/ui/layout/Header';
 
 import { CurrentUser } from '~/features/account/components/CurrentUser';
 
-import { Home } from '~/features/home/pages/Home';
 import { SignUp } from '~/features/account/pages/SignUp';
 import { SignIn } from '~/features/account/pages/SignIn';
 import { SignOut } from '~/features/account/pages/SignOut';
+
+import { RidesOverview } from '~/features/rides/pages/RidesOverview';
 
 import './App.css';
 
@@ -28,7 +29,7 @@ function App() {
       </Header>
 
       <Routes>
-        <Route path="/" Component={Home} />
+        <Route path="/" Component={RidesOverview} />
 
         <Route path="/account/sign-up" Component={SignUp} />
         <Route path="/account/sign-in" Component={SignIn} />

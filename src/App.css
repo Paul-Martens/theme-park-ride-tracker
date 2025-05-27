@@ -34,6 +34,30 @@ h1 {
   color: hsl(350, 75%, 45%);
 }
 
+table {
+  display: grid;
+  width: 100%;
+  max-width: 40rem;
+  background-color: hsl(0, 0%, 95%);
+  border-radius: 0.25rem;
+
+  tbody {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    tr {
+      display: block;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-top: 1px solid hsl(0, 0%, 90%);
+
+      &:first-of-type {
+        border-top: none;
+      }
+    }
+  }
+}
+
 a {
   color: hsl(170, 10%, 25%);
 
