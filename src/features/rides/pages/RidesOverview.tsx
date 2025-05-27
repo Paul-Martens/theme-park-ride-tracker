@@ -1,6 +1,7 @@
 import { Page } from '~/ui/layout/Page';
 
 import { useAllRides } from '../hooks/rides';
+import { Fragment } from 'react/jsx-runtime';
 
 function RidesOverview() {
   const { rides, isPending } = useAllRides();
@@ -18,7 +19,15 @@ function RidesOverview() {
         <tbody>
           {rides.map((ride) => (
             <tr key={ride.uuid}>
-              <td>{ride.name}</td>
+              <td>
+                {ride.name}
+                {ride.variants.length > 0 && (
+                  <Fragment>
+                    <br />(
+                    {ride.variants.map((variant) => variant.name).join(', ')})
+                  </Fragment>
+                )}
+              </td>
             </tr>
           ))}
         </tbody>

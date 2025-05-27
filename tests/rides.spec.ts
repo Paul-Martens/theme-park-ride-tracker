@@ -19,5 +19,6 @@ test.describe('Rides', () => {
     await expect(page.getByText('Danse Macabre')).toBeVisible();
     await expect(page.getByText('Baron 1898')).toBeVisible();
     await expect(page.getByText('Joris en de Draak')).toBeVisible();
+    await expect(page.getByText('(Rood, Blauw)')).toBeVisible();
   });
 });

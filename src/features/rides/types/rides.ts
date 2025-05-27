@@ -4,4 +4,14 @@ interface Ride {
   name: string;
 }
 
-export type { Ride };
+interface Variant {
+  uuid: string;
+  ride_uuid: string;
+  name: string;
+}
+
+interface RideWithVariant extends Ride {
+  variants: Variant[];
+}
+
+export type { Ride, Variant, RideWithVariant };

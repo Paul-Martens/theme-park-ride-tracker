@@ -75,6 +75,32 @@ export type Database = {
           },
         ]
       }
+      variants: {
+        Row: {
+          name: string
+          ride_uuid: string
+          uuid: string
+        }
+        Insert: {
+          name: string
+          ride_uuid: string
+          uuid?: string
+        }
+        Update: {
+          name?: string
+          ride_uuid?: string
+          uuid?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "variants_ride_uuid_fkey"
+            columns: ["ride_uuid"]
+            isOneToOne: false
+            referencedRelation: "rides"
+            referencedColumns: ["uuid"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never

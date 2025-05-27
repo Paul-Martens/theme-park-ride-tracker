@@ -2,14 +2,16 @@ import { useEffect, useState } from 'react';
 
 import { supabase } from '~/services/supabase';
 
-import type { Ride } from '../types/rides';
+import type { RideWithVariant } from '../types/rides';
 
 function useAllRides() {
-  const [rides, setRides] = useState<Ride[]>([]);
+  const [rides, setRides] = useState<RideWithVariant[]>([]);
   const [isPending, setIsPending] = useState(true);
 
   async function fetchAllRides() {
-    const { data: rides, error } = await supabase.from('rides').select('*');
+    const { data: rides, error } = await supabase
+      .from('rides')
+      .select('*, variants(*)');
 
     if (error) {
       throw new Error(error.message);
