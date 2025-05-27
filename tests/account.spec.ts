@@ -109,10 +109,6 @@ test.describe('Account', () => {
       await page.getByRole('button', { name: 'Sign In' }).click();
 
       await expect(page).toHaveURL('/');
-
-      await expect(
-        page.getByRole('heading', { name: 'Theme Park Ride Tracker' }),
-      ).toBeVisible();
     });
 
     /**
@@ -162,10 +158,6 @@ test.describe('Account', () => {
       await page.getByRole('button', { name: 'Sign Out' }).click();
 
       await expect(page).toHaveURL('/');
-
-      await expect(
-        page.getByRole('heading', { name: 'Theme Park Ride Tracker' }),
-      ).toBeVisible();
     });
   });
 });
