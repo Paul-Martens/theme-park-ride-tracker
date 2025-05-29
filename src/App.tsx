@@ -7,6 +7,8 @@ import { Header } from '~/ui/layout/Header';
 
 import { CurrentUser } from '~/features/account/components/CurrentUser';
 
+import { Today } from '~/features/today/pages/Today';
+
 import { SignUp } from '~/features/account/pages/SignUp';
 import { SignIn } from '~/features/account/pages/SignIn';
 import { SignOut } from '~/features/account/pages/SignOut';
@@ -30,12 +32,13 @@ function App() {
       </Header>
 
       <Routes>
-        <Route path="/" Component={RidesOverview} />
+        <Route path="/" Component={Today} />
 
         <Route path="/account/sign-up" Component={SignUp} />
         <Route path="/account/sign-in" Component={SignIn} />
         <Route path="/account/sign-out" Component={SignOut} />
 
+        <Route path="/rides" Component={RidesOverview} />
         <Route
           path="/rides/log/:ride_uuid/:variant_uuid?"
           Component={LogRide}
