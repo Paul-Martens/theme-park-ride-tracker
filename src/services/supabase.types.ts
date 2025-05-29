@@ -34,6 +34,45 @@ export type Database = {
   }
   public: {
     Tables: {
+      log: {
+        Row: {
+          auth_uuid: string
+          ride_uuid: string
+          timestamp: string
+          uuid: string
+          variant_uuid: string | null
+        }
+        Insert: {
+          auth_uuid?: string
+          ride_uuid: string
+          timestamp?: string
+          uuid?: string
+          variant_uuid?: string | null
+        }
+        Update: {
+          auth_uuid?: string
+          ride_uuid?: string
+          timestamp?: string
+          uuid?: string
+          variant_uuid?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "log_ride_uuid_fkey"
+            columns: ["ride_uuid"]
+            isOneToOne: false
+            referencedRelation: "rides"
+            referencedColumns: ["uuid"]
+          },
+          {
+            foreignKeyName: "log_variant_uuid_fkey"
+            columns: ["variant_uuid"]
+            isOneToOne: false
+            referencedRelation: "variants"
+            referencedColumns: ["uuid"]
+          },
+        ]
+      }
       parks: {
         Row: {
           name: string

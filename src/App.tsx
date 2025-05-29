@@ -12,6 +12,7 @@ import { SignIn } from '~/features/account/pages/SignIn';
 import { SignOut } from '~/features/account/pages/SignOut';
 
 import { RidesOverview } from '~/features/rides/pages/RidesOverview';
+import { LogRide } from '~/features/rides/pages/LogRide';
 
 import './App.css';
 
@@ -34,6 +35,11 @@ function App() {
         <Route path="/account/sign-up" Component={SignUp} />
         <Route path="/account/sign-in" Component={SignIn} />
         <Route path="/account/sign-out" Component={SignOut} />
+
+        <Route
+          path="/rides/log/:ride_uuid/:variant_uuid?"
+          Component={LogRide}
+        />
       </Routes>
     </Fragment>
   );

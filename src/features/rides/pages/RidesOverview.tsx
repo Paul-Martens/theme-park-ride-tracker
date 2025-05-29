@@ -1,9 +1,14 @@
+import { useNavigate } from 'react-router';
+
 import { Page } from '~/ui/layout/Page';
 
+import { Button } from '~/ui/forms/Button';
+
 import { useAllRides } from '../hooks/rides';
-import { Fragment } from 'react/jsx-runtime';
 
 function RidesOverview() {
+  const navigate = useNavigate();
+
   const { rides, isPending } = useAllRides();
 
   // TODO: Add a proper loading state
@@ -19,13 +24,27 @@ function RidesOverview() {
         <tbody>
           {rides.map((ride) => (
             <tr key={ride.uuid}>
+              <td>{ride.name}</td>
               <td>
-                {ride.name}
-                {ride.variants.length > 0 && (
-                  <Fragment>
-                    <br />(
-                    {ride.variants.map((variant) => variant.name).join(', ')})
-                  </Fragment>
+                {ride.variants.length === 0 ? (
+                  <Button
+                    onClick={() => {
+                      navigate(`/rides/log/${ride.uuid}`);
+                    }}
+                  >
+                    Log Ride
+                  </Button>
+                ) : (
+                  ride.variants.map((variant) => (
+                    <Button
+                      key={variant.uuid}
+                      onClick={() => {
+                        navigate(`/rides/log/${ride.uuid}/${variant.uuid}`);
+                      }}
+                    >
+                      Log Ride ({variant.name})
+                    </Button>
+                  ))
                 )}
               </td>
             </tr>
