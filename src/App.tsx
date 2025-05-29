@@ -40,7 +40,7 @@ function App() {
 
         <Route path="/rides" Component={RidesOverview} />
         <Route
-          path="/rides/log/:ride_uuid/:variant_uuid?"
+          path="/rides/log/:park_uuid/:ride_uuid/:variant_uuid?"
           Component={LogRide}
         />
       </Routes>

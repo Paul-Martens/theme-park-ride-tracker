@@ -9,12 +9,13 @@ import { Button } from '~/ui/forms/Button';
 import { useAllRides } from '../hooks/rides';
 
 type LogRideParams = {
+  park_uuid: string;
   ride_uuid: string;
   variant_uuid?: string;
 };
 
 function LogRide() {
-  const { ride_uuid, variant_uuid } = useParams<LogRideParams>();
+  const { park_uuid, ride_uuid, variant_uuid } = useParams<LogRideParams>();
 
   const navigate = useNavigate();
 
@@ -26,13 +27,17 @@ function LogRide() {
   );
 
   async function logRide() {
+    if (!park_uuid) {
+      throw new Error('Ride not found');
+    }
+
     if (!ride_uuid) {
       throw new Error('Ride not found');
     }
 
     const { error } = await supabase
       .from('log')
-      .insert({ ride_uuid, variant_uuid });
+      .insert({ park_uuid, ride_uuid, variant_uuid });
 
     if (error) {
       throw new Error(error.message);

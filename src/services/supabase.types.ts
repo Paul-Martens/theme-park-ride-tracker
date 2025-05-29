@@ -37,6 +37,7 @@ export type Database = {
       log: {
         Row: {
           auth_uuid: string
+          park_uuid: string
           ride_uuid: string
           timestamp: string
           uuid: string
@@ -44,6 +45,7 @@ export type Database = {
         }
         Insert: {
           auth_uuid?: string
+          park_uuid: string
           ride_uuid: string
           timestamp?: string
           uuid?: string
@@ -51,12 +53,20 @@ export type Database = {
         }
         Update: {
           auth_uuid?: string
+          park_uuid?: string
           ride_uuid?: string
           timestamp?: string
           uuid?: string
           variant_uuid?: string | null
         }
         Relationships: [
+          {
+            foreignKeyName: "log_park_uuid_fkey"
+            columns: ["park_uuid"]
+            isOneToOne: false
+            referencedRelation: "parks"
+            referencedColumns: ["uuid"]
+          },
           {
             foreignKeyName: "log_ride_uuid_fkey"
             columns: ["ride_uuid"]

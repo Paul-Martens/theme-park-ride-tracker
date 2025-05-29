@@ -29,7 +29,7 @@ function RidesOverview() {
                 {ride.variants.length === 0 ? (
                   <Button
                     onClick={() => {
-                      navigate(`/rides/log/${ride.uuid}`);
+                      navigate(`/rides/log/${ride.park_uuid}/${ride.uuid}`);
                     }}
                   >
                     Log Ride
@@ -39,7 +39,9 @@ function RidesOverview() {
                     <Button
                       key={variant.uuid}
                       onClick={() => {
-                        navigate(`/rides/log/${ride.uuid}/${variant.uuid}`);
+                        navigate(
+                          `/rides/log/${ride.park_uuid}/${ride.uuid}/${variant.uuid}`,
+                        );
                       }}
                     >
                       Log Ride ({variant.name})
