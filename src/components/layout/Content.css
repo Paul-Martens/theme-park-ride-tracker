@@ -1,0 +1,9 @@
+.Content {
+  padding: 1rem;
+  background-color: hsl(180, 15%, 100%);
+  border-radius: 0.25rem;
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
